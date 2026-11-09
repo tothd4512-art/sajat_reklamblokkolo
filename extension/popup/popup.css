@@ -1,0 +1,15 @@
+/* Popup-specifikus finomítások */
+
+body.popup { overflow-x: hidden; }
+
+.paused .site-card { border-color: rgba(251, 191, 36, 0.35); }
+.paused .site-card .globe { border-color: rgba(251, 191, 36, 0.35); }
+
+#siteHint:empty { display: none; }
+#siteHint { margin-top: 8px; }
+
+.off-note {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: var(--warn);
+}

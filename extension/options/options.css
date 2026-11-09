@@ -1,0 +1,34 @@
+.head-tools { display: flex; align-items: center; gap: 10px; }
+
+.seg {
+  display: inline-flex;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 2px;
+  gap: 2px;
+}
+.seg button {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.seg button:hover { color: var(--text); }
+.seg button.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+#customRules { min-height: 128px; }
+
+.note.hidden, .btn.hidden { display: none; }
+
+.stat-box .lbl { text-transform: none; }

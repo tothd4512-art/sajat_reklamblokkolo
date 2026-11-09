@@ -1,0 +1,159 @@
+# ReklámStop — reklámszerverek és hirdetési hálózatok
+#
+# Formátum: minden sor egy Chrome declarativeNetRequest (DNR) urlFilter.
+#   ||pelda.com^        -> a pelda.com és minden aldoménje
+#   ||pelda.com/ut^     -> csak a megadott útvonal
+# A '#' karakterrel kezdődő sor megjegyzés.
+# A build script ebből generálja a kiegészítő szabályait és a hosts fájlt.
+
+# --- Google hirdetési ökoszisztéma ---
+||doubleclick.net^
+||googleadservices.com^
+||googlesyndication.com^
+||adservice.google.com^
+||googletagservices.com^
+||2mdn.net^
+||admob.com^
+||google.com/pagead^
+||google.com/ads/measurement^
+||imasdk.googleapis.com^
+
+# --- Microsoft / Bing ---
+||bat.bing.com^
+||ads.microsoft.com^
+||ads.msn.com^
+
+# --- Amazon ---
+||amazon-adsystem.com^
+||assoc-amazon.com^
+
+# --- Yahoo / Verizon ---
+||adtech.yahooinc.com^
+||ads.yahoo.com^
+||advertising.com^
+||adap.tv^
+||brightroll.com^
+||yieldmanager.com^
+
+# --- Közösségi oldalak hirdetési felületei ---
+||ads-twitter.com^
+||ads.linkedin.com^
+||px.ads.linkedin.com^
+||px4.ads.linkedin.com^
+||ads.tiktok.com^
+||ct.pinterest.com^
+||tr.snapchat.com^
+||an.facebook.com^
+||facebook.com/tr^
+||business-api.tiktok.com^
+
+# --- Ad exchange / SSP / DSP ---
+||adnxs.com^
+||adnxs-simple.com^
+||adsrvr.org^
+||rubiconproject.com^
+||pubmatic.com^
+||openx.net^
+||appnexus.com^
+||casalemedia.com^
+||smartadserver.com^
+||sascdn.com^
+||media.net^
+||33across.com^
+||sharethrough.com^
+||sovrn.com^
+||lijit.com^
+||indexww.com^
+||tremorhub.com^
+||teads.tv^
+||spotxchange.com^
+||spotx.tv^
+||yieldmo.com^
+||adform.net^
+||adition.com^
+||bidswitch.net^
+||improvedigital.com^
+||gumgum.com^
+||districtm.io^
+||loopme.me^
+||adkernel.com^
+||adnuntius.com^
+||conversantmedia.com^
+||emxdgt.com^
+||gammadssp.com^
+||rhythmone.com^
+||tradedoubler.com^
+||zedo.com^
+||exponential.com^
+||tribalfusion.com^
+||mathtag.com^
+||simpli.fi^
+||exelator.com^
+||bidr.io^
+||adsymptotic.com^
+||krxd.net^
+||bluekai.com^
+||demdex.net^
+||everesttech.net^
+||agkn.com^
+||rlcdn.com^
+||tapad.com^
+||nexac.com^
+
+# --- Natív / tartalomajánló hirdetések ---
+||taboola.com^
+||taboolanews.com^
+||outbrain.com^
+||revcontent.com^
+||mgid.com^
+||zergnet.com^
+||plista.com^
+||nativo.com^
+||dable.io^
+||engageya.com^
+||content.ad^
+||dianomi.com^
+||ligatus.com^
+
+# --- Pop-up / pop-under hálózatok ---
+||popads.net^
+||propellerads.com^
+||adcash.com^
+||popcash.net^
+||onclickads.net^
+||hilltopads.net^
+||adsterra.com^
+||clickadu.com^
+
+# --- Mobilos hirdetési hálózatok ---
+||applovin.com^
+||unityads.unity3d.com^
+||inmobi.com^
+||mopub.com^
+||vungle.com^
+||chartboost.com^
+||ironsrc.com^
+||supersonicads.com^
+||adcolony.com^
+||startappservice.com^
+
+# --- Hirdetésmérés / verifikáció ---
+||adsafeprotected.com^
+||moatads.com^
+||moatpixel.com^
+||doubleverify.com^
+||adlightning.com^
+||confiant-integrations.net^
+||pixalate.com^
+
+# --- Affiliate / konverziókövetés ---
+||adroll.com^
+||criteo.com^
+||criteo.net^
+||smartadserver.com^
+||awin1.com^
+||impact.com^
+||cj.com^
+||linksynergy.com^
+||partnerize.com^
+||tradedoubler.com^

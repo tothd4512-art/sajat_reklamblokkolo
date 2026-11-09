@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReklámStop – beállítások</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body class="options">
+  <header class="wrap page-head">
+    <div class="brand">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+          <circle cx="12" cy="12" r="8.2" stroke="#6ee7a8" stroke-width="2" />
+          <path d="M6.4 17.6 17.6 6.4" stroke="#6ee7a8" stroke-width="2" />
+        </svg>
+      </span>
+      <div>
+        <h1 data-i18n="opt.title">Beállítások</h1>
+        <p class="sub" data-i18n="opt.subtitle">ReklámStop – saját reklámblokkoló</p>
+      </div>
+    </div>
+    <div class="head-tools">
+      <span class="badge-preview">előnézet</span>
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-lang="hu">HU</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+
+      <!-- Általános -->
+      <section class="card span-2">
+        <div class="card-head">
+          <h2 data-i18n="opt.general">Általános</h2>
+          <span class="value" id="verChip">v1.0.0</span>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="label" data-i18n="opt.master">Reklámblokkolás</div>
+            <div class="desc" data-i18n="opt.masterDesc"></div>
+          </div>
+          <label class="switch"><input type="checkbox" id="masterToggle" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="label" data-i18n="opt.lang">Felület nyelve</div>
+            <div class="desc">Magyar / English</div>
+          </div>
+          <div class="seg" role="group" aria-label="Language">
+            <button type="button" data-lang="hu">HU</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <div class="label" data-i18n="opt.countStats">Kérésszámlálás</div>
+            <div class="desc" data-i18n="opt.countStatsDesc"></div>
+          </div>
+          <label class="switch"><input type="checkbox" id="countToggle" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+      </section>
+
+      <!-- Kategóriák -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.categories">Kategóriák</h2>
+          <span class="value" id="catRulesTotal"></span>
+        </div>
+        <p class="hint" style="margin-bottom:6px" data-i18n="opt.categoriesDesc"></p>
+        <div class="row">
+          <div class="label" data-i18n="cat.ads">Reklám</div>
+          <label class="switch"><input type="checkbox" id="cat-ads" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="row">
+          <div class="label" data-i18n="cat.trackers">Követés</div>
+          <label class="switch"><input type="checkbox" id="cat-trackers" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="row">
+          <div class="label" data-i18n="cat.privacy">Adatvédelem</div>
+          <label class="switch"><input type="checkbox" id="cat-privacy" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+      </section>
+
+      <!-- Kozmetikai -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.cosmeticTitle">Kozmetikai szűrés</h2>
+        </div>
+        <p class="hint" style="margin-bottom:6px" data-i18n="opt.cosmeticDesc"></p>
+        <div class="row">
+          <div class="label" data-i18n="opt.group.ads">Hirdetési helyek</div>
+          <label class="switch"><input type="checkbox" id="cos-ads" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="row">
+          <div class="label" data-i18n="opt.group.consent">Cookie-bannerek</div>
+          <label class="switch"><input type="checkbox" id="cos-consent" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+        <div class="row">
+          <div class="label" data-i18n="opt.group.widget">Widgetek / popupok</div>
+          <label class="switch"><input type="checkbox" id="cos-widget" /><span class="track"><span class="thumb"></span></span></label>
+        </div>
+      </section>
+
+      <!-- Saját szabályok -->
+      <section class="card span-2">
+        <div class="card-head">
+          <h2 data-i18n="opt.customTitle">Saját szabályok</h2>
+          <span class="value" id="customCount">0</span>
+        </div>
+        <p class="hint" style="margin-bottom:8px" data-i18n="opt.customDesc"></p>
+        <textarea id="customRules" rows="6" spellcheck="false" data-i18n-ph="opt.customPh"></textarea>
+        <div class="note warn hidden" id="invalidNote">
+          <strong data-i18n="opt.invalidLines">Nem értelmezhető sorok</strong>: <span id="invalidList"></span>
+        </div>
+        <div class="hint" style="margin-top:8px" data-i18n="opt.dynamicLimit"></div>
+      </section>
+
+      <!-- Engedélyezett oldalak -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.allowTitle">Engedélyezett oldalak</h2>
+        </div>
+        <p class="hint" style="margin-bottom:8px" data-i18n="opt.allowDesc"></p>
+        <div class="field-row">
+          <input type="text" id="allowInput" data-i18n-ph="opt.allowPh" placeholder="pelda.hu" />
+          <button class="btn btn-sm" id="allowAdd" data-i18n="common.add">Hozzáadás</button>
+        </div>
+        <div class="list" id="allowList"></div>
+      </section>
+
+      <!-- Import -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.importTitle">Szűrőlista importja</h2>
+        </div>
+        <p class="hint" style="margin-bottom:10px" data-i18n="opt.importDesc"></p>
+        <div class="btn-row">
+          <button class="btn btn-sm" id="importBtn" data-i18n="opt.importBtn">Fájl kiválasztása</button>
+          <button class="btn btn-sm btn-danger hidden" id="importRemove" data-i18n="opt.importRemove">Importált lista törlése</button>
+        </div>
+        <input type="file" id="importFile" accept=".txt,text/plain" class="hidden" />
+        <div class="note hidden" id="importNote" style="margin-top:10px"></div>
+      </section>
+
+      <!-- Export -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.exportTitle">DNS / hosts export</h2>
+        </div>
+        <p class="hint" style="margin-bottom:10px" data-i18n="opt.exportDesc"></p>
+        <div class="btn-row">
+          <button class="btn btn-sm" id="exportHosts" data-i18n="opt.exportHosts">hosts fájl letöltése</button>
+          <button class="btn btn-sm" id="exportDomains" data-i18n="opt.exportDomains">domain lista letöltése</button>
+        </div>
+      </section>
+
+      <!-- Statisztika -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.statsTitle">Statisztika</h2>
+          <button class="btn btn-sm btn-danger" id="resetStats" data-i18n="opt.statsReset">Statisztika nullázása</button>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-box"><span class="num" id="statTotal">0</span><span class="lbl" data-i18n="opt.statsTotal">Összes blokkolt kérés</span></div>
+          <div class="stat-box"><span class="num" id="statAds">0</span><span class="lbl" data-i18n="cat.ads">Reklám</span></div>
+          <div class="stat-box"><span class="num" id="statTrackers">0</span><span class="lbl" data-i18n="cat.trackers">Követés</span></div>
+          <div class="stat-box"><span class="num" id="statPrivacy">0</span><span class="lbl" data-i18n="cat.privacy">Adatvédelem</span></div>
+        </div>
+        <div class="kv" style="margin-top:10px">
+          <span data-i18n="opt.statsSince">Mérés kezdete</span>
+          <span id="statSince">—</span>
+        </div>
+      </section>
+
+      <!-- Névjegy -->
+      <section class="card">
+        <div class="card-head">
+          <h2 data-i18n="opt.aboutTitle">Névjegy</h2>
+        </div>
+        <div class="kv"><span data-i18n="opt.version">Verzió</span><span id="aboutVersion">1.0.0</span></div>
+        <div class="kv"><span data-i18n="opt.builtin">Beépített szabályok</span><span id="aboutRules">—</span></div>
+        <div class="kv"><span data-i18n="opt.generated">Szűrőlista generálva</span><span id="aboutGenerated">—</span></div>
+        <div class="hint" style="margin-top:10px" data-i18n="opt.hint"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

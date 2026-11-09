@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReklámStop</title>
+  <link rel="stylesheet" href="../shared/ui.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body class="popup">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+            <circle cx="12" cy="12" r="8.2" stroke="#6ee7a8" stroke-width="2" />
+            <path d="M6.4 17.6 17.6 6.4" stroke="#6ee7a8" stroke-width="2" />
+          </svg>
+        </span>
+        <div>
+          <h1 data-i18n="app.name">ReklámStop</h1>
+          <p class="sub" data-i18n="app.subtitle">saját reklámblokkoló</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="badge-preview">előnézet</span>
+        <button class="lang-btn" id="langBtn" title="Magyar / English">EN</button>
+      </div>
+    </header>
+
+    <section class="card hero" id="hero">
+      <div class="hero-top">
+        <div>
+          <p class="status-label"><span class="dot"></span><span id="statusText">Védelem aktív</span></p>
+          <p class="status-hint" id="statusHint"></p>
+        </div>
+        <label class="switch switch-lg">
+          <input type="checkbox" id="masterToggle" aria-label="Reklámblokkolás" />
+          <span class="track"><span class="thumb"></span></span>
+        </label>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="num" id="totalNum">0</span>
+          <span class="metric-label" data-i18n="popup.blockedTotal">blokkolt kérés összesen</span>
+        </div>
+        <div class="metric">
+          <span class="num accent" id="tabNum">0</span>
+          <span class="metric-label" data-i18n="popup.onThisPage">ezen az oldalon</span>
+        </div>
+      </div>
+
+      <div class="chips" id="chips"></div>
+    </section>
+
+    <section class="card site-card">
+      <div class="site-row">
+        <div class="site-info">
+          <span class="globe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#93a4bd" stroke-width="1.8">
+              <circle cx="12" cy="12" r="8.5" />
+              <ellipse cx="12" cy="12" rx="3.6" ry="8.5" />
+              <path d="M3.5 12h17" />
+            </svg>
+          </span>
+          <span class="site-host" id="siteHost">—</span>
+        </div>
+        <label class="switch" title="Szüneteltetés ezen az oldalon">
+          <input type="checkbox" id="siteToggle" aria-label="Szüneteltetés ezen az oldalon" />
+          <span class="track"><span class="thumb"></span></span>
+        </label>
+      </div>
+      <p class="hint" id="siteHint" data-i18n="popup.reloadHint"></p>
+      <button class="btn btn-ghost btn-sm" id="reloadBtn" data-i18n="popup.reload">Oldal újratöltése</button>
+    </section>
+
+    <footer class="bottom">
+      <button class="btn btn-primary" id="optionsBtn" data-i18n="popup.options">Beállítások</button>
+      <span class="ver" id="verLabel">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+# ReklámStop — adatvédelem: ujjlenyomat-készítés, közösségi widgetek, consent-spam
+# Formátum: DNR urlFilter, egy sor = egy szabály.
+
+# --- Ujjlenyomat-készítés (fingerprinting) ---
+||fingerprintjs.com^
+||fpjs.io^
+||fingerprint.com^
+||fpapi.io^
+||iovation.com^
+||threatmetrix.com^
+||perimeterx.net^
+||px-cdn.net^
+||maxmind.com^
+
+# --- Közösségi widgetek / megosztás ---
+||platform.twitter.com^
+||platform.linkedin.com^
+||connect.facebook.net^
+||platform.instagram.com^
+||widgets.pinterest.com^
+||addthis.com^
+||sharethis.com^
+||shareaholic.com^
+||addtoany.com^
+||sumo.com^
+
+# --- Consent management / GDPR-banner szolgáltatók ---
+||cookiebot.com^
+||onetrust.com^
+||cookielaw.org^
+||iubenda.com^
+||quantcast.mgr.consensu.org^
+||sourcepoint.com^
+||sp-prod.net^
+||privacy-mgmt.com^
+||usercentrics.eu^
+||consensu.org^
+||didomi.io^
+||sddan.com^
+||borlabs.io^
+||cookieinformation.com^
+
+# --- Adatbróker / audiens szinkronizálás ---
+||crwdcntrl.net^
+||exponential.com^
+||narrative.io^
+||liveintent.com^
+||liveramp.com^
+||neustar.biz^
+||zeotap.com^
+||adsquare.com^
+||id5-sync.com^
+||sublime.xyz^
+||sharethrough.com^
+
+# --- Session/device ID szinkron ---
+||sync.adotmob.com^
+||um.simpli.fi^
+||pixel.rubiconproject.com^
+||match.adsrvr.org^
+||ib.adnxs.com^
+||sync.criteo.com^
+
+# --- Kripto-bányász / notifikációs spam ---
+||coinhive.com^
+||crypto-loot.com^
+||coinimp.com^
+||webminepool.com^
+||push-notifications.top^
+||cloudpushs.com^
+||notifyservice.net^

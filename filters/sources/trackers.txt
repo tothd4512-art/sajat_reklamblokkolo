@@ -1,0 +1,101 @@
+# ReklámStop — analitika és viselkedéskövetés
+# Formátum: DNR urlFilter, egy sor = egy szabály.
+
+# --- Google analitika / tag manager ---
+||google-analytics.com^
+||analytics.google.com^
+||googletagmanager.com^
+||app-measurement.com^
+||firebaseinstallations.googleapis.com^
+||firebaselogging.googleapis.com^
+
+# --- Meta / Facebook ---
+||graph.facebook.com^
+||pixel.facebook.com^
+
+# --- Session replay / viselkedéselemzés ---
+||hotjar.com^
+||hotjar.io^
+||segment.com^
+||segment.io^
+||mixpanel.com^
+||amplitude.com^
+||heapanalytics.com^
+||fullstory.com^
+||mouseflow.com^
+||smartlook.com^
+||logrocket.com^
+||lr-ingest.io^
+||inspectlet.com^
+||luckyorange.com^
+||clarity.ms^
+||quantummetric.com^
+||contentsquare.net^
+||decibelinsight.net^
+
+# --- A/B tesztelés ---
+||optimizely.com^
+||vwo.com^
+||abtasty.com^
+||kameleoon.eu^
+||dynamicytx.com^
+
+# --- Közönségmérés / panel ---
+||quantserve.com^
+||quantcast.com^
+||scorecardresearch.com^
+||comscore.com^
+||nielsen.com^
+||imrworldwide.com^
+||chartbeat.com^
+||parsely.com^
+||permutive.com^
+||newrelic.com^
+||nr-data.net^
+
+# --- Adobe / Oracle marketing felhő ---
+||adobedtm.com^
+||omtrdc.net^
+||2o7.net^
+||eloqua.com^
+||marketo.com^
+||mktoresp.com^
+
+# --- CRM / marketing automatizálás ---
+||hubspot.com^
+||hs-scripts.com^
+||hsforms.net^
+||pardot.com^
+||mailchimp.com^
+||list-manage.com^
+||klaviyo.com^
+||braze.com^
+||iterable.com^
+
+# --- Mobilos attribúció ---
+||branch.io^
+||appsflyer.com^
+||adjust.com^
+||kochava.com^
+||singular.net^
+||tenjin.io^
+
+# --- Push értesítés / újralátogatás ---
+||onesignal.com^
+||pushengage.com^
+||pushwoosh.com^
+||izooto.com^
+||cleverpush.com^
+||webpushs.com^
+
+# --- Egyéb mérőpixelek ---
+||statcounter.com^
+||clicky.com^
+||matomo.cloud^
+||histats.com^
+||getclicky.com^
+||crazyegg.com^
+||mopinion.com^
+||surveygizmo.com^
+||typeform.com^
+||sitemeter.com^

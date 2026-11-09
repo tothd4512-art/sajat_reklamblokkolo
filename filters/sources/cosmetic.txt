@@ -1,0 +1,110 @@
+# ReklámStop — kozmetikai szűrés (CSS-elrejtés)
+#
+# Formátum (az EasyList/AdGuard jelölést követi):
+#   ##szelektor                  -> minden oldalon elrejtjük
+#   pelda.hu##szelektor          -> csak a pelda.hu-n (és aldomainjein)
+#   a.hu,b.hu##szelektor         -> több oldalon
+#
+# Csoportjelölő: '#!group ads' | '#!group consent' | '#!group widget'
+# A build script ebből JSON-t készít, amit a content script injektál.
+# FIGYELEM: a saját listádban csak olyan szelektort vegyél fel, amit
+# ellenőriztél — a túl általános szelektorok hasznos tartalmat is elrejthetnek.
+
+#!group ads
+# ============ Reklámhelyek ============
+##.adsbygoogle
+##ins.adsbygoogle
+##iframe[id^="google_ads_iframe"]
+##div[id^="google_ads_iframe"]
+##div[id^="div-gpt-ad"]
+##div[id^="gpt-passback"]
+##[data-ad-slot]
+##[data-ad-unit]
+##[data-google-query-id]
+##.ad-slot
+##.ad-wrapper
+##.ad-container
+##.ad-banner
+##.ad-placement
+##.ad-unit
+##.advert
+##.advertisement
+##.adsbox
+##.dfp-slot
+##.taboola
+##.OUTBRAIN
+##[id^="taboola-"]
+##[id^="outbrain_widget"]
+##.trc_related_container
+##.js-ad-slot
+##.sponsored-content
+##.native-ad
+##.advertorial
+
+#!group consent
+# ============ Cookie- és consent-bannerek ============
+##[id^="sp_message_container"]
+##[id^="sp_message_iframe"]
+##.sp-message-open
+##.fc-consent-root
+##.fc-dialog-overlay
+###onetrust-banner-sdk
+##[id^="onetrust-consent-sdk"]
+###CybotCookiebotDialog
+###CybotCookiebotDialogBodyUnderlay
+##.cc-window.cc-banner
+##.cc-window.cc-floating
+###cookie-notice
+###cookie-law-info-bar
+###cookiebanner
+###cookie-banner
+###cookiescript_injected
+###cookiescript_injected_wrapper
+##[id^="cookiescript_"]
+###iubenda-cs-banner
+###qc-cmp2-container
+##[id^="didomi-host"]
+###usercentrics-root
+###usercentrics-cmp-ui
+###axeptio_overlay
+###axeptio_main_button
+###borlabs-cookie
+###cmpbox
+###cmpbox2
+###consent_blackbar
+###gdpr-banner
+###gdprCookieBanner
+##[class^="cmp-container"]
+##.cmp-wrapper
+###truste-consent-track
+###truste-consent-content
+###privacypolicytip
+##.cookie-consent-banner
+##.cookie-consent-modal
+##.cookie-policy-notice
+##[data-testid="cookie-banner"]
+
+#!group widget
+# ============ Közösségi widgetek / hírlevél-popup ============
+##.fb-like
+##.fb-share-button
+##[class^="fb_iframe_widget"]
+##iframe[src*="platform.twitter.com"]
+##iframe[src*="connect.facebook.net"]
+##.sharethis-inline-share-buttons
+##.addthis-smartlayers
+##.addthis_toolbox
+##.sumome-popup
+##[id^="sumome-"]
+##.ml-form-embedContainer
+##.newsletter-overlay
+##.newsletter-popup
+##.email-popup
+##.exit-intent-popup
+
+#!group ads
+# ============ Oldalspecifikus példák ============
+# Az alábbiakat bátran cseréld/egészítsd ki a saját listádban.
+example.com##.site-ad-rail
+example.com##.sticky-ad
+hu.example.com##.banner-970

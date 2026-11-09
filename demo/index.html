@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReklámStop – élő demó</title>
+  <meta name="description" content="Saját reklámblokkoló: élő demó ugyanazzal a szűrőlistával és motorral, amit a bővítmény használ." />
+  <link rel="stylesheet" href="../extension/shared/ui.css" />
+  <link rel="stylesheet" href="demo.css" />
+</head>
+<body class="demo">
+  <header class="demo-top">
+    <div class="wrap-demo demo-top-inner">
+      <div class="brand">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
+            <circle cx="12" cy="12" r="8.2" stroke="#6ee7a8" stroke-width="2" />
+            <path d="M6.4 17.6 17.6 6.4" stroke="#6ee7a8" stroke-width="2" />
+          </svg>
+        </span>
+        <div>
+          <h1>ReklámStop</h1>
+          <p class="sub">élő demó · ugyanaz a szűrőlista, mint a bővítményben</p>
+        </div>
+      </div>
+      <nav class="demo-nav">
+        <a href="#hogyan">Hogyan működik</a>
+        <a href="../extension/popup/popup.html">Popup UI</a>
+        <a href="../extension/options/options.html">Beállítások</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap-demo demo-main">
+    <!-- ------------------- szimulált böngésző ------------------- -->
+    <section class="browser" aria-label="Szimulált weboldal">
+      <div class="browser-bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="addr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="4.5" y="10.5" width="15" height="9.5" rx="2.2" />
+            <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+          </svg>
+          hirportal.hu/belfold/reggeli-kozlekedes
+        </span>
+        <span class="browser-tag" id="browserTag">szűrés be</span>
+      </div>
+
+      <div class="site" id="site">
+        <div class="site-head">
+          <span class="site-logo">Hír<b>Portál</b></span>
+          <span class="site-nav">Belföld · Gazdaság · Tech · Sport</span>
+        </div>
+
+        <!-- leaderboard -->
+        <div class="zone" data-domain="pagead2.googlesyndication.com" data-cat="ads" data-size="970×90">
+          <div class="ad-live">
+            <div class="fake-ad fake-ad-leader">
+              <span class="fake-tag">HIRDETÉS</span>
+              <span class="fake-title">Nyaralj idén Horvátországban – 30% kedvezmény!</span>
+              <span class="fake-cta">Foglalás →</span>
+            </div>
+          </div>
+          <div class="ad-blocked"><span class="x">✕</span> hirdetés blokkolva <code>pagead2.googlesyndication.com</code></div>
+        </div>
+
+        <article class="story">
+          <h2 class="story-title">Reggeli káosz a belvárosban: két sávot is lezártak a felújítás miatt</h2>
+          <p class="story-lead">
+            Hétfő reggel jelentősen megnőtt a menetidő a főváros belső kerületeiben, mert a
+            Deák tér környékén megkezdődtek az útpálya-felújítási munkák. A BKK azt javasolja,
+            hogy aki teheti, metróval vagy villamossal közlekedjen.
+          </p>
+
+          <!-- natív hirdetés -->
+          <div class="zone" data-domain="taboola.com" data-cat="ads" data-size="3 kártya">
+            <div class="ad-live">
+              <div class="fake-ad fake-ad-native">
+                <span class="fake-tag">TÁMOGATOTT TARTALOM</span>
+                <div class="native-grid">
+                  <div class="native-card"><span></span>Ez a 7 trükk megváltoztatja a reggeleidet</div>
+                  <div class="native-card"><span></span>Egy magyar település, amiről kevesen tudnak</div>
+                  <div class="native-card"><span></span>Autósok, figyelem: ez jövő héttől drágul</div>
+                </div>
+              </div>
+            </div>
+            <div class="ad-blocked"><span class="x">✕</span> natív hirdetés blokkolva <code>taboola.com</code></div>
+          </div>
+
+          <p>
+            A szakemberek szerint a munkálatok várhatóan két hétig tartanak, addig a környező
+            utcákban is torlódásra kell számítani. A kerületi önkormányzat azt kéri, hogy a
+            lakók lehetőség szerint kerüljék el az érintett szakaszt.
+          </p>
+
+          <!-- social widget + tracker -->
+          <div class="zone zone-social" data-domain="connect.facebook.net" data-cat="privacy" data-size="widget">
+            <div class="ad-live">
+              <div class="fake-social">
+                <span>Kövess minket!</span>
+                <span class="social-btn fb_iframe_widget">Facebook</span>
+                <span class="social-btn">X</span>
+                <span class="social-btn">Pinterest</span>
+              </div>
+            </div>
+            <div class="ad-blocked"><span class="x">✕</span> közösségi követő-widget blokkolva <code>connect.facebook.net</code></div>
+          </div>
+
+          <p>
+            A forgalmi adatok szerint a reggeli csúcsidőben a szokásosnál mintegy 20 százalékkal
+            többen használták a tömegközlekedést. A munkálatok befejezéséről a közlekedési
+            társaság a honlapján ad tájékoztatást.
+          </p>
+
+          <!-- oldalsáv-hirdetés -->
+          <div class="zone zone-rail" data-domain="adsrvr.org" data-cat="ads" data-size="300×250">
+            <div class="ad-live">
+              <div class="fake-ad fake-ad-square">
+                <span class="fake-tag">HIRDETÉS</span>
+                <span class="fake-title">Új energiaital – 0 cukor</span>
+                <span class="fake-store">Megnézem</span>
+              </div>
+            </div>
+            <div class="ad-blocked"><span class="x">✕</span> hirdetés blokkolva <code>adsrvr.org</code></div>
+          </div>
+
+          <!-- analitika -->
+          <div class="zone zone-pixel" data-domain="google-analytics.com" data-cat="trackers" data-size="1×1 pixel">
+            <div class="ad-live"><span class="pixel">1×1 követő pixel</span></div>
+            <div class="ad-blocked"><span class="x">✕</span> követő pixel blokkolva <code>google-analytics.com</code></div>
+          </div>
+        </article>
+
+        <!-- cookie banner -->
+        <div class="consent-banner" id="consentBanner">
+          <p class="consent-text">
+            <b>Sütiket használunk</b> – hogy személyre szabott hirdetéseket és tartalmat
+            mutathassunk, a partnereinkkel együtt követjük a viselkedésedet.
+          </p>
+          <div class="consent-actions">
+            <button class="consent-btn">Elfogadom</button>
+            <button class="consent-btn ghost">Beállítások</button>
+          </div>
+        </div>
+
+        <!-- newsletter popup -->
+        <div class="newsletter-popup" id="newsletterPopup">
+          <button class="nl-close" aria-label="Bezárás">✕</button>
+          <b>Ne maradj le semmiről!</b>
+          <p>Iratkozz fel a reggeli hírlevélre.</p>
+          <div class="nl-field"><span>email@pelda.hu</span><button>Feliratkozom</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------- vezérlőpanel ------------------- -->
+    <aside class="panel">
+      <div class="card">
+        <div class="hero-top">
+          <div>
+            <p class="status-label" id="panelStatus"><span class="dot"></span><span>Szűrés aktív</span></p>
+            <p class="status-hint">Ez a panel a bővítmény popupjának logikáját utánozza.</p>
+          </div>
+          <label class="switch switch-lg">
+            <input type="checkbox" id="masterToggle" checked aria-label="Szűrés be/ki" />
+            <span class="track"><span class="thumb"></span></span>
+          </label>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <span class="num accent" id="blockedCount">0</span>
+            <span class="metric-label">blokkolt kérés</span>
+          </div>
+          <div class="metric">
+            <span class="num" id="allowedCount">0</span>
+            <span class="metric-label">átengedett kérés</span>
+          </div>
+        </div>
+
+        <div class="chips" id="chips"></div>
+
+        <div class="btn-row" style="margin-top:12px">
+          <button class="btn btn-sm" id="replayBtn">↻ Oldalletöltés újra</button>
+          <button class="btn btn-sm btn-ghost" id="clearBtn">Napló törlése</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2>Kérésnapló</h2>
+          <span class="value" id="logCount">0 esemény</span>
+        </div>
+        <div class="log" id="log"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head"><h2>Miért ez a döntés?</h2></div>
+        <div class="explain" id="explain">
+          Válassz ki egy elemet a naplóból, hogy lásd, melyik szabály illeszkedett.
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ------------------- hogyan működik ------------------- -->
+  <section class="wrap-demo how" id="hogyan">
+    <h2>Hogyan épül fel?</h2>
+    <div class="how-grid">
+      <article class="card">
+        <span class="step">1</span>
+        <h3>Egy forrás, sok formátum</h3>
+        <p>
+          A <code>filters/sources/*.txt</code> fájlokban laknak a szabályok.
+          A <code>tools/build.mjs</code> ebből generálja a bővítmény DNR-szabályait,
+          a <code>hosts</code> fájlt és a domain listát – így minden ugyanazt a listát használja.
+        </p>
+      </article>
+      <article class="card">
+        <span class="step">2</span>
+        <h3>Hálózati + kozmetikai szűrés</h3>
+        <p>
+          A kérések blokkolása a böngésző <code>declarativeNetRequest</code> motorjával történik,
+          a hirdetési helyeket és cookie-bannereket pedig CSS injektálással rejti el a
+          <code>content/cosmetic.js</code>.
+        </p>
+      </article>
+      <article class="card">
+        <span class="step">3</span>
+        <h3>Böngészőn kívül is</h3>
+        <p>
+          A <code>dns/</code> mappa egy helyi DNS-blokkolót és hosts-generátort tartalmaz,
+          így telefonon és asztali gépen, minden appban ugyanez a lista védhet.
+        </p>
+      </article>
+    </div>
+    <div class="note" style="margin-top:14px">
+      Ez az oldal ugyanazt a <code>extension/data/filters.json</code> fájlt és ugyanazt a
+      <code>extension/shared/engine.js</code> motorlogikát használja, mint a kiegészítő –
+      amit itt látsz, az nem animáció, hanem a valódi szabályok döntése.
+    </div>
+  </section>
+
+  <footer class="demo-foot">
+    <div class="wrap-demo">
+      <span>ReklámStop · saját reklámblokkoló · <span id="ruleInfo">—</span></span>
+    </div>
+  </footer>
+
+  <script type="module" src="demo.js"></script>
+</body>
+</html>
